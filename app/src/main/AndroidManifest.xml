@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.collegeproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--Location-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <!--=======-->
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/MyAppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAWdl-Lq_71AZEEgecwsm53fyB-dEcdOQ8" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyAppTheme1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.StoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.QueryActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.MapActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.SellBuyActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.QueryDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.AddStoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.ProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.SellDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.activity.AdPostActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.ViewStory"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

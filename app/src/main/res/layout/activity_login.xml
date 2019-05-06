@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.activity.LoginActivity">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingStart="6dp">
+
+            <EditText
+                android:id="@+id/userId_eT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:hint="User ID"
+                android:inputType="textEmailAddress"
+                android:padding="6dp"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/main_sub_header" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progressbar_login"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="146dp"
+                android:layout_height="79dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/app_color_dark" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingStart="6dp">
+
+            <EditText
+                android:id="@+id/userPass_eT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="6dp"
+                android:singleLine="true"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/main_sub_header" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/app_color_dark"
+            android:text="continue"
+            android:textColor="@color/white" />
+        <android.support.design.widget.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingStart="6dp">
+        <TextView
+            android:id="@+id/show_login_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            android:text="@string/app_name"
+            android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/goRegister_tV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="Don't have an account? Register Now"
+        android:textColor="@color/html_txt_color"
+        android:textStyle="bold" />
+</RelativeLayout>

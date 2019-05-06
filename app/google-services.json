@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "428287697055",
+    "firebase_url": "https://academia-rivista.firebaseio.com",
+    "project_id": "academia-rivista",
+    "storage_bucket": "academia-rivista.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428287697055:android:fa8c4aa9d6495721",
+        "android_client_info": {
+          "package_name": "com.collegeproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9MLYMNkHj5oVVG8GQx8DEWJ7qOu2oq_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428287697055-ghbklnike42qd08al00h5lgd99857fql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

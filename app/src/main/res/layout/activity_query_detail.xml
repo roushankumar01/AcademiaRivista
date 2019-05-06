@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".view.activity.QueryDetailActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/app_color_light">
+
+        <ImageView
+            android:id="@+id/backQdetail"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="56dp"
+            android:text="Query"
+            android:textSize="@dimen/action_header"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center|left"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/questiondetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="8dp"
+                android:text="What's the last thing you did for the first time in your life and didn't regret trying it?"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/action_header"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/postedby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:text="Posted By : Ashwini"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/posteddate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Date : 01 March, 2019"
+                android:textSize="@dimen/item_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@color/bg_gray"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Answers"
+                android:textStyle="bold"
+                android:textColor="@color/app_color_dark"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/queryAnsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="64dp"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/bg_gray"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/commentinput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/text_box"
+            android:hint="Type your answer here..."
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/main_header" />
+
+        <ImageView
+            android:id="@+id/addcommentbtn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:rotation="-45"
+            android:src="@android:drawable/ic_menu_send"
+            android:tint="@color/app_color_light" />
+    </RelativeLayout>
+
+</RelativeLayout>
