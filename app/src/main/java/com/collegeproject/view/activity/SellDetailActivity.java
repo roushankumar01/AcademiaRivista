@@ -97,7 +97,7 @@ public class SellDetailActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         if (bundle!=null){
             title = bundle.getString("title");
-            price = bundle.getString("name");
+            price = bundle.getString("price");
             email = bundle.getString("email");
             phone = bundle.getString("phone");
             des = bundle.getString("des");

@@ -18,6 +18,8 @@ import com.collegeproject.view.activity.SellDetailActivity;
 
 import java.util.List;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class RecyclerAdapterSellItem extends RecyclerView.Adapter<RecyclerAdapterSellItem.ViewHolder> {
 
     private Context context;
@@ -56,6 +58,7 @@ public class RecyclerAdapterSellItem extends RecyclerView.Adapter<RecyclerAdapte
                 i.putExtra("des",sellBuyModelList.get(position).getDes());
                 i.putExtra("image_url",sellBuyModelList.get(position).getImage_url());
                 i.putExtra("name", sellBuyModelList.get(position).getName());
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }
         });
