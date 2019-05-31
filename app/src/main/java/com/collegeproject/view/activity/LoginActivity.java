@@ -2,8 +2,10 @@ package com.collegeproject.view.activity;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -25,6 +27,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -175,7 +178,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("TAG", "Login Success");
                     loginProgress.setText("Login success");
                     Toast.makeText(getApplicationContext(), "Login Succes",Toast.LENGTH_SHORT).show();
-                    gotoHome();
+                    storeTokenId();
                 }else {
                     Log.w("TAG", "signInWithEmail:failure", task.getException());
                     Toast.makeText(getApplicationContext(), "Login Failed due to "+ task.getException(),Toast.LENGTH_SHORT).show();
@@ -196,7 +199,19 @@ public class LoginActivity extends AppCompatActivity {
     private void showSnacker(String message){
         Snackbar.make(buttonClickView, message, Snackbar.LENGTH_LONG ).show();
     }
+
+    private void storeTokenId(){
+        String token_id = FirebaseInstanceId.getInstance().getToken();
+        SharedPreferences sharedpreferences = getSharedPreferences("user_details", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("token_id", token_id);
+        editor.commit();
+        gotoHome();
+    }
     private void gotoHome(){
+
+
+
         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
     }
     /*===============================*/

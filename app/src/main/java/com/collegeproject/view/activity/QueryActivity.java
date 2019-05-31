@@ -1,7 +1,9 @@
 package com.collegeproject.view.activity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +49,7 @@ public class QueryActivity extends AppCompatActivity {
     private FloatingActionButton addQueryFab;
     private View view;
     private LayoutInflater layoutInflater;
+    private String tokenId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,8 @@ public class QueryActivity extends AppCompatActivity {
     }
 
     private void storeQuery(String query){
+        getTokenId();
+        Log.d("Token", "tokenid" + tokenId);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Map<String, Object> data = new HashMap<>();
         SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
@@ -112,6 +117,7 @@ public class QueryActivity extends AppCompatActivity {
         data.put("query", query);
         data.put("postdate", date);
         data.put("postedby", name);
+        data.put("token_id", tokenId);
         db.collection("Queries").document().set(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -157,5 +163,10 @@ public class QueryActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         QueryActivity.this.finish();
+    }
+
+    private void getTokenId(){
+        SharedPreferences sharedPreferences = getSharedPreferences("user_details", Context.MODE_PRIVATE);
+        tokenId = sharedPreferences.getString("token_id", null);
     }
 }
